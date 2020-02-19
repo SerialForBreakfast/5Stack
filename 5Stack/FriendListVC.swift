@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FriendListVC: UITableViewController {
+class FriendListVC: UITableViewController, StoryBoarded {
 
     var friends = [Friend]()
     var selectedFriend: Int? = nil

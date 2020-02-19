@@ -10,8 +10,10 @@
 		4416871123FDD5A200E7113C /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4416871023FDD5A200E7113C /* Game.swift */; };
 		4416871323FDD97900E7113C /* TextTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4416871223FDD97900E7113C /* TextTableViewCell.swift */; };
 		4416871523FDE97500E7113C /* Int+TimeFormatting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4416871423FDE97500E7113C /* Int+TimeFormatting.swift */; };
+		4416871723FDF11100E7113C /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4416871623FDF11000E7113C /* Coordinator.swift */; };
+		4416871923FDF27000E7113C /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4416871823FDF27000E7113C /* MainCoordinator.swift */; };
+		4416871B23FDF31200E7113C /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4416871A23FDF31200E7113C /* Storyboarded.swift */; };
 		44E4B7E823FD9C39007BFBE9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44E4B7E723FD9C39007BFBE9 /* AppDelegate.swift */; };
-		44E4B7EA23FD9C3A007BFBE9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44E4B7E923FD9C3A007BFBE9 /* SceneDelegate.swift */; };
 		44E4B7EC23FD9C3A007BFBE9 /* FriendListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44E4B7EB23FD9C3A007BFBE9 /* FriendListVC.swift */; };
 		44E4B7EF23FD9C3A007BFBE9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44E4B7ED23FD9C3A007BFBE9 /* Main.storyboard */; };
 		44E4B7F123FD9C41007BFBE9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 44E4B7F023FD9C41007BFBE9 /* Assets.xcassets */; };
@@ -24,9 +26,11 @@
 		4416871023FDD5A200E7113C /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		4416871223FDD97900E7113C /* TextTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextTableViewCell.swift; sourceTree = "<group>"; };
 		4416871423FDE97500E7113C /* Int+TimeFormatting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+TimeFormatting.swift"; sourceTree = "<group>"; };
+		4416871623FDF11000E7113C /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		4416871823FDF27000E7113C /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
+		4416871A23FDF31200E7113C /* Storyboarded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboarded.swift; sourceTree = "<group>"; };
 		44E4B7E423FD9C39007BFBE9 /* 5Stack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 5Stack.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		44E4B7E723FD9C39007BFBE9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		44E4B7E923FD9C3A007BFBE9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		44E4B7EB23FD9C3A007BFBE9 /* FriendListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendListVC.swift; sourceTree = "<group>"; };
 		44E4B7EE23FD9C3A007BFBE9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		44E4B7F023FD9C41007BFBE9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -67,8 +71,10 @@
 			isa = PBXGroup;
 			children = (
 				44E4B7E723FD9C39007BFBE9 /* AppDelegate.swift */,
-				44E4B7E923FD9C3A007BFBE9 /* SceneDelegate.swift */,
 				44E4B7EB23FD9C3A007BFBE9 /* FriendListVC.swift */,
+				4416871623FDF11000E7113C /* Coordinator.swift */,
+				4416871823FDF27000E7113C /* MainCoordinator.swift */,
+				4416871A23FDF31200E7113C /* Storyboarded.swift */,
 				44E4B7FD23FDA40D007BFBE9 /* FriendEditVC.swift */,
 				44E4B7FB23FD9ED0007BFBE9 /* Friend.swift */,
 				4416871023FDD5A200E7113C /* Game.swift */,
@@ -156,11 +162,13 @@
 				44E4B7EC23FD9C3A007BFBE9 /* FriendListVC.swift in Sources */,
 				4416871323FDD97900E7113C /* TextTableViewCell.swift in Sources */,
 				4416871123FDD5A200E7113C /* Game.swift in Sources */,
+				4416871923FDF27000E7113C /* MainCoordinator.swift in Sources */,
 				4416871523FDE97500E7113C /* Int+TimeFormatting.swift in Sources */,
 				44E4B7E823FD9C39007BFBE9 /* AppDelegate.swift in Sources */,
 				44E4B7FE23FDA40D007BFBE9 /* FriendEditVC.swift in Sources */,
-				44E4B7EA23FD9C3A007BFBE9 /* SceneDelegate.swift in Sources */,
+				4416871B23FDF31200E7113C /* Storyboarded.swift in Sources */,
 				44E4B7FC23FD9ED0007BFBE9 /* Friend.swift in Sources */,
+				4416871723FDF11100E7113C /* Coordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

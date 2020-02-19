@@ -8,7 +8,8 @@
 
 import UIKit
 
-class FriendEditVC: UITableViewController {
+class FriendEditVC: UITableViewController, StoryBoarded {
+    
     
     @IBAction func nameChanged(_ sender: UITextField) {
         friend.name = sender.text ?? ""
