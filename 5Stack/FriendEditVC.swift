@@ -11,10 +11,10 @@ import UIKit
 class FriendEditVC: UITableViewController {
     
     @IBAction func nameChanged(_ sender: UITextField) {
-        
+        friend.name = sender.text ?? ""
     }
     
-    weak var delegate: UIViewController?
+    weak var delegate: FriendListVC?
     
     var friend: Friend!  // Can't exist without a friend to edit
     
@@ -50,6 +50,11 @@ class FriendEditVC: UITableViewController {
         }
         selectedTimeZone = timeZones.firstIndex(of: friend.timeZone) ?? 0
         
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        delegate?.updateFriend(friend: friend)
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {

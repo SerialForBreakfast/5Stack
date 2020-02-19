@@ -11,7 +11,7 @@ import UIKit
 class FriendListVC: UITableViewController {
 
     var friends = [Friend]()
-
+    var selectedFriend: Int? = nil
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -76,9 +76,17 @@ class FriendListVC: UITableViewController {
         guard let vc = storyboard?.instantiateViewController(identifier: "FriendEditVC") as? FriendEditVC else  {
             fatalError()
         }
+        selectedFriend = position
         vc.delegate = self
         vc.friend = friend
         navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    func updateFriend(friend: Friend) {
+        guard let selectedFriend = selectedFriend else { return }
+        friends[selectedFriend] = friend
+        tableView.reloadData()
+        saveData()
     }
 }
 
