@@ -17,7 +17,7 @@ class FriendListVC: UITableViewController {
         super.viewDidLoad()
         
         loadData()
-        title = "5Stack Friends"
+        title = "5Stack"
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addFriend))
         
     }
@@ -32,6 +32,10 @@ class FriendListVC: UITableViewController {
         cell.textLabel?.text = friend.name
         cell.detailTextLabel?.text = friend.timeZone.identifier
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        editFriend(friend: friends[indexPath.row], position: indexPath.row)
     }
     
     func loadData() {
@@ -60,10 +64,21 @@ class FriendListVC: UITableViewController {
     
     @objc func addFriend() {
         let friend = Friend()
+        
         friends.append(friend)
         tableView.insertRows(at: [IndexPath(row: friends.count - 1, section: 0)], with: .automatic)
         saveData()
+        editFriend(friend: friend, position: friends.count - 1)
+
     }
     
+    func editFriend(friend: Friend, position: Int) {
+        guard let vc = storyboard?.instantiateViewController(identifier: "FriendEditVC") as? FriendEditVC else  {
+            fatalError()
+        }
+        vc.delegate = self
+        vc.friend = friend
+        navigationController?.pushViewController(vc, animated: true)
+    }
 }
 
