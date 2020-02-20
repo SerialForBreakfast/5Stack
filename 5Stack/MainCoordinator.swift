@@ -19,7 +19,20 @@ class MainCoordinator: Coordinator {
     
     func start() {
         let vc = FriendListVC.instantiate()
+        vc.coordinator = self
         navigationController.pushViewController(vc, animated: false)
     }
     
+    func editFriend(friend: Friend) {
+        let vc = FriendEditVC.instantiate()
+        vc.coordinator = self
+        vc.friend = friend
+        navigationController.pushViewController(vc, animated: true)
+    }
+    
+    func updateFriend(friend: Friend) {
+        guard let vc = navigationController.viewControllers.first as? FriendListVC else { return }
+        print(vc.friends)
+        vc.updateFriend(friend: friend)
+    }
 }

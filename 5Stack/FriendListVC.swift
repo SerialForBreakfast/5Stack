@@ -9,7 +9,7 @@
 import UIKit
 
 class FriendListVC: UITableViewController, StoryBoarded {
-
+    weak var coordinator: MainCoordinator?
     var friends = [Friend]()
     var selectedFriend: Int? = nil
 
@@ -40,7 +40,8 @@ class FriendListVC: UITableViewController, StoryBoarded {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        editFriend(friend: friends[indexPath.row], position: indexPath.row)
+        selectedFriend = indexPath.row
+        coordinator?.editFriend(friend: friends[indexPath.row])
     }
     
     func loadData() {
@@ -73,19 +74,11 @@ class FriendListVC: UITableViewController, StoryBoarded {
         friends.append(friend)
         tableView.insertRows(at: [IndexPath(row: friends.count - 1, section: 0)], with: .automatic)
         saveData()
-        editFriend(friend: friend, position: friends.count - 1)
+        selectedFriend = friends.count - 1
+        coordinator?.editFriend(friend: friend)
 
     }
-    
-    func editFriend(friend: Friend, position: Int) {
-        guard let vc = storyboard?.instantiateViewController(identifier: "FriendEditVC") as? FriendEditVC else  {
-            fatalError()
-        }
-        selectedFriend = position
-        vc.delegate = self
-        vc.friend = friend
-        navigationController?.pushViewController(vc, animated: true)
-    }
+
     
     func updateFriend(friend: Friend) {
         guard let selectedFriend = selectedFriend else { return }

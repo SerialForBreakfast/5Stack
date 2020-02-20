@@ -72,7 +72,7 @@
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits"/>
                                             <connections>
-                                                <action selector="nameChanged:" destination="NVq-Bm-ghh" eventType="editingDidEnd" id="QNj-it-eP5"/>
+                                                <action selector="nameChanged:" destination="NVq-Bm-ghh" eventType="editingChanged" id="mOE-pa-viD"/>
                                             </connections>
                                         </textField>
                                     </subviews>

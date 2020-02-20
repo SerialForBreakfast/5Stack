@@ -71,10 +71,10 @@
 			isa = PBXGroup;
 			children = (
 				44E4B7E723FD9C39007BFBE9 /* AppDelegate.swift */,
-				44E4B7EB23FD9C3A007BFBE9 /* FriendListVC.swift */,
 				4416871623FDF11000E7113C /* Coordinator.swift */,
 				4416871823FDF27000E7113C /* MainCoordinator.swift */,
 				4416871A23FDF31200E7113C /* Storyboarded.swift */,
+				44E4B7EB23FD9C3A007BFBE9 /* FriendListVC.swift */,
 				44E4B7FD23FDA40D007BFBE9 /* FriendEditVC.swift */,
 				44E4B7FB23FD9ED0007BFBE9 /* Friend.swift */,
 				4416871023FDD5A200E7113C /* Game.swift */,

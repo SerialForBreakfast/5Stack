@@ -9,13 +9,12 @@
 import UIKit
 
 class FriendEditVC: UITableViewController, StoryBoarded {
-    
+    weak var coordinator: MainCoordinator?
     
     @IBAction func nameChanged(_ sender: UITextField) {
         friend.name = sender.text ?? ""
+        print("Name Changed: \(friend.name)")
     }
-    
-    weak var delegate: FriendListVC?
     
     var friend: Friend!  // Can't exist without a friend to edit
     
@@ -55,7 +54,8 @@ class FriendEditVC: UITableViewController, StoryBoarded {
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        delegate?.updateFriend(friend: friend)
+        print(friend.name)
+        coordinator?.updateFriend(friend: friend)
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
